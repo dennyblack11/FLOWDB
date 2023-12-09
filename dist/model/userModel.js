@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
+const enums_1 = require("../utils/enums");
 const userModel = new mongoose_1.Schema({
     email: {
         type: String,
@@ -13,13 +14,16 @@ const userModel = new mongoose_1.Schema({
     token: {
         type: String,
     },
+    schoolName: {
+        type: String,
+    },
     schoolCode: {
         type: String,
         unique: true,
     },
     status: {
         type: String,
-        default: "school",
+        default: enums_1.SCHOOL.ADMIN,
     },
     verify: {
         type: Boolean,

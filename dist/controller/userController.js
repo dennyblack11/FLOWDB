@@ -31,6 +31,7 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             password: hashedPassword,
             schoolCode,
             token,
+            status: enums_1.SCHOOL.ADMIN,
         });
         (0, email_1.sendEmail)(user);
         return res.status(enums_1.HTTP.CREATED).json({

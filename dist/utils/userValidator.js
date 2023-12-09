@@ -7,6 +7,7 @@ exports.passwordValidator = exports.registerValidator = void 0;
 const joi_1 = __importDefault(require("joi"));
 let regex = /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).{10,16}$/;
 exports.registerValidator = joi_1.default.object({
+    schoolName: joi_1.default.string().required(),
     email: joi_1.default.string().email().required(),
     password: joi_1.default.string().pattern(new RegExp(regex)).required(),
     confirm: joi_1.default.ref("password"),
